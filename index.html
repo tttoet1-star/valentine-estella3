@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estella 💖</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(circle at top, #ff758c, #ff7eb3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+}
+h1 { font-size: 2.5em; margin-bottom: 40px; }
+.buttons { position: relative; height: 200px; width: 100%; }
+button {
+  padding: 18px 40px;
+  font-size: 1.5em;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+#oui { background: #ff2e63; color: white; }
+#non {
+  background: #ffd166;
+  position: absolute;
+  left: 50%;
+  top: 80px;
+  transform: translateX(-50%);
+}
+</style>
+</head>
+
+<body>
+
+<h1>Estella, veux-tu être ma Valentine ? 💌</h1>
+
+<div class="buttons">
+  <button id="oui">OUI ❤️</button>
+  <button id="non">non</button>
+</div>
+
+<script>
+const non = document.getElementById('non');
+non.addEventListener('mouseover', () => {
+  non.style.left = Math.random() * (window.innerWidth - non.offsetWidth) + 'px';
+  non.style.top  = Math.random() * (window.innerHeight - non.offsetHeight) + 'px';
+});
+document.getElementById('oui').onclick = () => {
+  document.body.innerHTML = '<h1>💖 OUIII ESTELLA 💖</h1>';
+};
+</script>
+
+</body>
+</html>
